@@ -13,11 +13,11 @@ require('dotenv').config();
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 var dbURI = "mongodb://localhost:27017/todo'";
-// if (process.env.NODE_ENV === 'production') {
-//     dbURI = process.env.MONGOLAB_URI;
-// }
-mongoose.connect(dbURI, { useNewUrlParser: true });
-console.log(process.env.MONGOLAB_URI)
+if (process.env.NODE_ENV === 'production') {
+    dbURI = process.env.MONGOLAB_URI;
+}
+mongoose.connect(dbURI, { useMongoClient: true });
+console.log(dbURI)
 
 var ToDoSchema = new mongoose.Schema({
   _id: {type: mongoose.Schema.Types.ObjectId, auto: true},
