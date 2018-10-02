@@ -8,9 +8,11 @@ app.use(bodyParser.urlencoded({
 })); 
 app.use(bodyParser.json());
 
+require('dotenv').config();
+
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://heroku_pjrlk52q:ham08s6glqi09f4vej6rqgfmk2@ds121203.mlab.com:21203/heroku_pjrlk52q/todo', { useNewUrlParser: true });
+mongoose.connect('process.env.MONGOLAB_URI + /todo', { useNewUrlParser: true });
 
 var ToDoSchema = new mongoose.Schema({
   _id: {type: mongoose.Schema.Types.ObjectId, auto: true},
