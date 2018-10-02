@@ -22,7 +22,7 @@
     "dotenv": "^6.0.0",
     "express": "^4.14.1",
     "foreman": "^3.0.1",
-    "mongodb": "^2.2.22",
-    "mongoose": "^4.8.1"
+    "mongoose": "~4.4.16",
+    "mongodb": "~2.1.18"
   }
 }

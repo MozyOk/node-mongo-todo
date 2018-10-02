@@ -12,7 +12,12 @@ require('dotenv').config();
 
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('process.env.MONGOLAB_URI', { useNewUrlParser: true });
+var dbURI = "mongodb://localhost:27017/todo'";
+// if (process.env.NODE_ENV === 'production') {
+//     dbURI = process.env.MONGOLAB_URI;
+// }
+mongoose.connect(dbURI, { useNewUrlParser: true });
+console.log(process.env.MONGOLAB_URI)
 
 var ToDoSchema = new mongoose.Schema({
   _id: {type: mongoose.Schema.Types.ObjectId, auto: true},
@@ -50,5 +55,5 @@ app.delete('/todo/:id', function (req, res) {
   });
 });
 
-app.listen(3000);
-console.log('server.js listens 3000');
+var port = process.env.PORT || 3000;
+app.listen(port);
