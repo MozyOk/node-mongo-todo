@@ -12,7 +12,7 @@ require('dotenv').config();
 
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('process.env.MONGOLAB_URI + /todo', { useNewUrlParser: true });
+mongoose.connect('process.env.MONGOLAB_URI', { useNewUrlParser: true });
 
 var ToDoSchema = new mongoose.Schema({
   _id: {type: mongoose.Schema.Types.ObjectId, auto: true},
