@@ -1,0 +1,26 @@
+{
+  "name": "node-mongo-todo",
+  "version": "1.0.0",
+  "description": "simple todo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MozyOk/node-mongo-todo.git"
+  },
+  "author": "Mozy Ok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MozyOk/node-mongo-todo/issues"
+  },
+  "homepage": "https://github.com/MozyOk/node-mongo-todo#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1",
+    "mongodb": "^2.2.22",
+    "mongoose": "^4.8.1"
+  }
+}
