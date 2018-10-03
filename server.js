@@ -17,7 +17,6 @@ if (process.env.NODE_ENV === 'production') {
     dbURI = process.env.MONGOLAB_URI + '/todo';
 }
 mongoose.connect(dbURI, { useMongoClient: true });
-console.log(dbURI)
 
 var ToDoSchema = new mongoose.Schema({
   _id: {type: mongoose.Schema.Types.ObjectId, auto: true},
