@@ -12,9 +12,9 @@ require('dotenv').config();
 
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-var dbURI = "mongodb://localhost:27017/todo'";
+var dbURI = 'mongodb://localhost:27017/todo';
 if (process.env.NODE_ENV === 'production') {
-    dbURI = process.env.MONGOLAB_URI;
+    dbURI = process.env.MONGOLAB_URI + '/todo';
 }
 mongoose.connect(dbURI, { useMongoClient: true });
 console.log(dbURI)
