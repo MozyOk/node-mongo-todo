@@ -29,7 +29,9 @@
           <div class="panel-body">
             <div class="list-group">
               <span class="list-group-item" v-for="(todo, index) in todos">
-                <button type="btn btn-success" class="close" aria-label="Close" v-on:click="deleteTodo(index)"><i class="glyphicon glyphicon-ok" style="font-size:24px; color:green"></i></button>
+                <button type="btn btn-success" class="close" aria-label="Close" v-on:click="deleteTodo(index)">
+                  <i class="glyphicon glyphicon-ok" style="font-size:24px; color:green"></i>
+                </button>
                 <h4 class="list-group-item-heading">{{ todo.title }}</h4>
                 <p class="list-group-item-text">{{ todo.content }}</p>
               </span>
