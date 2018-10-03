@@ -16,20 +16,20 @@
   <div class="container" id="todos">
     <div class="row">
       <div class="col-md-12">
-        <div class="panel panel-primary">
+        <div class="panel panel-default">
           <div class="panel-heading">
             <center>
               <form class="form-inline">
                 <input class="form-control" placeholder="Title" v-model="todo.title">
                 <input class="form-control" placeholder="Content" v-model="todo.content">
-                <button class="btn btn-success" v-on:click="addTodo"><i class="glyphicon glyphicon-ok"></i></button>
+                <button class="btn btn-primary" v-on:click="addTodo"><i class="glyphicon glyphicon-plus"></i></button>
               </form>
             </form>
           </div>
           <div class="panel-body">
             <div class="list-group">
               <span class="list-group-item" v-for="(todo, index) in todos">
-                <button type="button" class="close" aria-label="Close" v-on:click="deleteTodo(index)"><span aria-hidden="true">&times;</span></button>
+                <button type="btn btn-success" class="close" aria-label="Close" v-on:click="deleteTodo(index)"><i class="glyphicon glyphicon-ok" style="font-size:24px; color:green"></i></button>
                 <h4 class="list-group-item-heading">{{ todo.title }}</h4>
                 <p class="list-group-item-text">{{ todo.content }}</p>
               </span>
