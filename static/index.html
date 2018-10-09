@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Vue ToDo</title>
@@ -7,6 +8,7 @@
   <script src="lib/vue-2.1.10.min.js"></script>
   <script src="lib/vue-resource-1.1.2.min.js"></script>
 </head>
+
 <body>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -24,14 +26,13 @@
                 <input class="form-control" placeholder="Content" v-model="todo.content">
                 <button class="btn btn-primary" v-on:click="addTodo"><i class="glyphicon glyphicon-plus"></i></button>
               </form>
-            </form>
+              </form>
           </div>
           <div class="panel-body">
             <div class="list-group">
               <span class="list-group-item" v-for="(todo, index) in todos">
                 <button type="btn btn-success" class="close" aria-label="Close" v-on:click="deleteTodo(index)">
-                  <i class="glyphicon glyphicon-ok" style="font-size:24px; color:green"></i>
-                </button>
+                  <i class="glyphicon glyphicon-ok" style="font-size:24px; color:green"></i></button>
                 <h4 class="list-group-item-heading">{{ todo.title }}</h4>
                 <p class="list-group-item-text">{{ todo.content }}</p>
               </span>
@@ -43,4 +44,5 @@
   </div>
 </body>
 <script src="app.js"></script>
+
 </html>

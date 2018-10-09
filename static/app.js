@@ -4,7 +4,7 @@ new Vue({
   },
   el: '#todos',
   data: {
-    todo: { __v: '', content: '', title: '', _id:'' },
+    todo: { __v: '', content: '', title: '', _id: '' },
     todos: []
   },
   created: function () {
