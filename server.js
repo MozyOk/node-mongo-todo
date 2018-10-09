@@ -19,10 +19,8 @@ if (process.env.NODE_ENV === 'production') {
 mongoose.connect(dbURI, { useMongoClient: true });
 
 var ToDoSchema = new mongoose.Schema({
-  _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
   title: String,
   content: String,
-  date: Date
 });
 var ToDo = mongoose.model('ToDo', ToDoSchema);
 
@@ -34,7 +32,6 @@ app.put('/todo', function (req, res) {
   var n = new ToDo();
   n.title = req.body.title;
   n.content = req.body.content;
-  n.data = Date.now();
   n.save();
   n.save(function (err, todo) {
     console.log('Adds the todo ' + todo._id);
