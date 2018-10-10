@@ -27,6 +27,7 @@
     "mime": "1.4.1",
     "moment-timezone": "0.5.21",
     "mongodb": "2.1.18",
-    "mongoose": "4.4.16"
+    "mongoose": "4.4.16",
+    "v-tooltip": "2.0.0-rc.33"
   }
 }
