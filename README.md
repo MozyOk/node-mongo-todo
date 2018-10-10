@@ -7,8 +7,10 @@ Simple Todo App
 - dotenv
 - express
 - foreman
+- moment-timezone
 - mongoose
 - mongodb
+- v-tooltip
 
 # How To Use
 
