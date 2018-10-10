@@ -21,8 +21,12 @@ mongoose.connect(dbURI, { useMongoClient: true });
 var ToDoSchema = new mongoose.Schema({
   title: String,
   content: String,
-  adddate: String,
-});
+  adddate: String
+  },
+  {
+    timestamps: true
+  },
+);
 var ToDo = mongoose.model('ToDo', ToDoSchema);
 
 app.get('/', function (req, res) {
