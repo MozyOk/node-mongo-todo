@@ -32,10 +32,20 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
+var moment = require('moment-timezone');
+
 app.put('/todo', function (req, res) {
   var n = new ToDo();
   n.title = req.body.title;
   n.content = req.body.content;
+
+  // mongo n._id to convert JST timestamp
+  // TODO: Refactor this! simple honesty 
+  timestamp = n._id.toString().substring(0,8);
+  date = new Date( parseInt( timestamp, 16 ) * 1000 );
+  date_jst = moment(date).tz("Asia/Tokyo").format();
+  n.adddate = date_jst;
+  
   n.save();
   n.save(function (err, todo) {
     console.log('Adds the todo ' + todo._id);
