@@ -21,6 +21,7 @@ mongoose.connect(dbURI, { useMongoClient: true });
 var ToDoSchema = new mongoose.Schema({
   title: String,
   content: String,
+  adddate: String,
 });
 var ToDo = mongoose.model('ToDo', ToDoSchema);
 
@@ -35,13 +36,12 @@ app.put('/todo', function (req, res) {
   n.title = req.body.title;
   n.content = req.body.content;
   
-  // mongo n._id to convert JST timestamp 
+  // mongo n._id to convert JST timestamp
+  // TODO: Refactor this 
   timestamp = n._id.toString().substring(0,8);
   date = new Date( parseInt( timestamp, 16 ) * 1000 );
-  // console.log(date);
   date_jst = moment(date).tz("Asia/Tokyo").format();
-  // console.log(date_jst);
-
+  n.adddate = date_jst;
   n.save();
   n.save(function (err, todo) {
     console.log('Adds the todo ' + todo._id);
