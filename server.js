@@ -78,7 +78,6 @@ app.get('/todo/:id', function (req, res) {
 
 app.delete('/todo/:id', function (req, res) {
   ToDo.findOneAndRemove({ '_id': req.params.id }, function (err, todo) {
-    console.log('Removes the todo ' + todo._id);
     res.status((!err) ? 200 : 500).json((typeof (todo) !== 'undefined') ? todo : { error: true });
   });
 });
