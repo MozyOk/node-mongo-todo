@@ -41,17 +41,17 @@ app.put('/todo', function (req, res) {
 
   // TODO: Refactor this!
   // original data is also converted & It does not work with window width..
-  if (n.title.length  > 50) {
+  if (n.title.length > 50) {
     n.title = n.title.substr(0, 50) + '…';
   }
-  if (n.content.length  > 80) {
+  if (n.content.length > 80) {
     n.content = n.content.substr(0, 80) + '…';
   }
 
   // mongo n._id to convert JST timestamp
   // TODO: Refactor this! simple honesty 
-  timestamp = n._id.toString().substring(0,8);
-  date = new Date( parseInt( timestamp, 16 ) * 1000 );
+  timestamp = n._id.toString().substring(0, 8);
+  date = new Date(parseInt(timestamp, 16) * 1000);
   date_jst = moment(date).tz("Asia/Tokyo").format();
   n.adddate = date_jst;
 
