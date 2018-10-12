@@ -41,12 +41,12 @@ app.put('/todo', function (req, res) {
 
   // TODO: Refactor this!
   // original data is also converted & It does not work with window width..
-  if (n.title.length > 50) {
-    n.title = n.title.substr(0, 50) + '…';
-  }
-  if (n.content.length > 80) {
-    n.content = n.content.substr(0, 80) + '…';
-  }
+  // if (n.title.length > 50) {
+  //   n.title = n.title.substr(0, 50) + '…';
+  // }
+  // if (n.content.length > 80) {
+  //   n.content = n.content.substr(0, 80) + '…';
+  // }
 
   // mongo n._id to convert JST timestamp
   // TODO: Refactor this! simple honesty 
