@@ -24,7 +24,19 @@ new Vue({
         });
       }
     },
+    editTodo: function (index, todo) {
+      console.log('editTodo: ' + this.todos[index]._id);
+      console.log('title: ' + todo.title);
+      console.log('content: ' + todo.content);
+      // this.todos.splice(index, 1);
+      this.todo.title = 'hogehogera';
+      this.todo.content = 'hogehogera';
+      this.$http.delete('/todo/' + this.todos[index]._id).then(function (response) {
+        this.todos.push(response.body);
+      });
+    },
     deleteTodo: function (index) {
+      console.log('deleteTodo: ' + this.todos[index]._id);
       this.$http.delete('/todo/' + this.todos[index]._id).then(function (response) {
         this.todos.splice(index, 1);
       });

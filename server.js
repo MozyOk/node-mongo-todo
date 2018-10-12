@@ -69,6 +69,13 @@ app.get('/todos', function (req, res) {
   });
 });
 
+app.get('/todo/:id', function (req, res) {
+  ToDo.update({'_id': req.params.id, 'title': todo.title, upsert: true}, function (err, todo) {
+    console.log('Edit the todo' + todo._id);
+    res.status((!err) ? 200 : 500).json((typeof (todos) !== 'undefined') ? todo : { error: true });
+  });
+});
+
 app.delete('/todo/:id', function (req, res) {
   ToDo.findOneAndRemove({ '_id': req.params.id }, function (err, todo) {
     console.log('Removes the todo ' + todo._id);
